@@ -1,0 +1,9 @@
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+// Description: Create a new post
+{
+  "title": "New Post Title",
+  "content": "This is the content of the new post.",
+  "authorId": 1
+}

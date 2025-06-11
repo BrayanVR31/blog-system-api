@@ -1,0 +1,5 @@
+PATCH http://localhost:3000/followers/1
+Content-Type: application/json
+
+{
+}

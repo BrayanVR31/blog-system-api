@@ -1,0 +1,4 @@
+PATCH http://localhost:3000/categories
+Content-Type: application/json
+
+{}

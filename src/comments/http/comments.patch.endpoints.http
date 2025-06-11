@@ -1,0 +1,5 @@
+PATCH http://localhost:3000/comments/1
+Content-Type: application/json
+
+{
+}

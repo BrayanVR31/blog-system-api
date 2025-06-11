@@ -1,0 +1,5 @@
+POST http://localhost:3000/followers
+Content-Type: application/json
+
+{
+}

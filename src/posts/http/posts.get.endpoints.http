@@ -1,0 +1,5 @@
+GET http://localhost:3000/posts
+// Description: Get all posts
+
+GET http://localhost:3000/posts/2
+// Description: Get a post by ID
