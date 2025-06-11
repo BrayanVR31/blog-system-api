@@ -14,10 +14,11 @@ import { UsersModule } from './users/users.module';
 import { BookmarksController } from './bookmarks/bookmarks.controller';
 import { BookmarksModule } from './bookmarks/bookmarks.module';
 import { FollowersModule } from './followers/followers.module';
+import { TagService } from "./tags/providers/tag.service";
 
 @Module({
   imports: [PostsModule, CategoriesModule, TagsModule, CommentsModule, ReactionsModule, UsersModule, BookmarksModule, FollowersModule],
   controllers: [AppController, PostsController, CategoriesController, TagsController, CommentsController, BookmarksController],
-  providers: [AppService],
+  providers: [AppService, TagService],
 })
 export class AppModule {}

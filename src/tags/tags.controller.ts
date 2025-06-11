@@ -2,21 +2,23 @@ import { Controller, Get, Post, Patch, Delete, Param, Body } from '@nestjs/commo
 import CreateTagDto from './dtos/create-tag.dto';
 import UpdateTagDto from './dtos/update-tag.dto';
 import GetParamsTagDto from './dtos/get-params-tag.dto';
+import { TagService } from "./providers/tag.service";
 
 @Controller('tags')
 export class TagsController {
+  constructor(private readonly tagService: TagService) { }
   @Get()
   getTags() {
-    return "List of tags";
+    return this.tagService.getList();
   }
 
   @Get("{:id}")
-  getTagById(@Param() params : GetParamsTagDto) {
+  getTagById(@Param() params: GetParamsTagDto) {
     return "tag " + params.id;
   }
 
   @Post()
-  createTag(@Body() createTagDto: CreateTagDto){
+  createTag(@Body() createTagDto: CreateTagDto) {
     return createTagDto;
   }
 
@@ -26,6 +28,6 @@ export class TagsController {
   }
 
   @Delete("{:id}")
-  destroyTag(@Param() params: GetParamsTagDto) {}
+  destroyTag(@Param() params: GetParamsTagDto) { }
 }
 
