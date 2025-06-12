@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from "@nestjs/typeorm";
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PostsController } from './posts/posts.controller';
@@ -14,11 +15,28 @@ import { UsersModule } from './users/users.module';
 import { BookmarksController } from './bookmarks/bookmarks.controller';
 import { BookmarksModule } from './bookmarks/bookmarks.module';
 import { FollowersModule } from './followers/followers.module';
+/**
+ * Services
+ */
 import { TagService } from "./tags/providers/tag.service";
+import { CategoriesService } from './categories/providers/categories.service';
+/**
+ * Entities
+ */
+import { Category } from "./categories/category.entity";
+import { DataSource } from 'typeorm';
+
 
 @Module({
-  imports: [PostsModule, CategoriesModule, TagsModule, CommentsModule, ReactionsModule, UsersModule, BookmarksModule, FollowersModule],
+  imports: [TypeOrmModule.forRoot({
+    type: "postgres",
+    url: process.env.DATABASE_URL,
+    synchronize: true,
+    entities: [Category]
+  }), PostsModule, CategoriesModule, TagsModule, CommentsModule, ReactionsModule, UsersModule, BookmarksModule, FollowersModule],
   controllers: [AppController, PostsController, CategoriesController, TagsController, CommentsController, BookmarksController],
-  providers: [AppService, TagService],
+  providers: [AppService, TagService, CategoriesService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private dataSource: DataSource) { }
+}

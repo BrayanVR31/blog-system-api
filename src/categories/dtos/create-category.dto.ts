@@ -5,14 +5,14 @@ export default class CreateCategoryDto {
   @MinLength(3)
   @MaxLength(100)
   name: string;
-  @IsOptional()
   @IsString()
   @MinLength(3)
   @MaxLength(100)
-  slug?: string;
+  slug: string;
   @IsOptional()
   @IsString()
   description: string;
+  @IsOptional()
   @IsString()
   @MinLength(2)
   @MaxLength(7)
