@@ -28,7 +28,7 @@ import { Follower } from './followers/follower.enity';
   imports: [TypeOrmModule.forRootAsync({
     useFactory: () => ({
       type: "postgres",
-      url: "postgresql://postgres.jlwyfrvktgdaelqgmoct:MGSexMBK6i1ZHG2I@aws-0-us-east-2.pooler.supabase.com:6543/postgres?pgbouncer=true",
+      url: "",
       synchronize: true,
       entities: [Category, Tag, User, Post, Comment, Follower]
     })
