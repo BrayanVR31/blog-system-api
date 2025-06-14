@@ -1,4 +1,6 @@
-PATCH http://localhost:3000/tags/1
+PATCH http://localhost:3000/tags/e219e319-1839-4799-a43b-0a199b9dc78a
 Content-Type: application/json
 
-{}
+{
+  "color": "000"
+}

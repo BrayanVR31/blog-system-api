@@ -1,4 +1,6 @@
-PATCH http://localhost:3000/categories
+PATCH http://localhost:3000/categories/29c7eb85-0bbc-46af-9d96-ccb7c28bf344
 Content-Type: application/json
 
-{}
+{
+  "name": "Category B"
+}

@@ -8,26 +8,27 @@ import { CategoriesService } from './providers/categories.service';
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) { }
   @Get()
-  async getCategories() {
-    return await this.categoriesService.findAll();
+  getCategories() {
+    return this.categoriesService.findAll();
   }
 
   @Get('{:id}')
   getCategoryById(@Param() params: GetParamsCategoryDto) {
-    return "Get category by id";
+    return this.categoriesService.findOne(params.id);
   }
 
   @Post()
-  async createCategory(@Body() createCategoryDto: CreateCategoryDto) {
-    return await this.categoriesService.save(createCategoryDto);
+  createCategory(@Body() createCategoryDto: CreateCategoryDto) {
+    return this.categoriesService.save(createCategoryDto);
   }
 
   @Patch('{:id}')
   updateCategory(@Body() updateCategoryDto: UpdateCategoryDto, @Param() params: GetParamsCategoryDto) {
-    return "The category was updated!";
+    return this.categoriesService.updateOne(params.id, updateCategoryDto);
   }
 
   @Delete('{:id}')
   destroyCategory(@Param() params: GetParamsCategoryDto) {
+    this.categoriesService.deleteOne(params.id);
   }
 }

@@ -1,4 +1,8 @@
 POST http://localhost:3000/tags
 Content-Type: application/json
 
-{}
+{
+  "name":"Producto",
+  "slug": "bolsa",
+  "color": "FFC0CB"
+}

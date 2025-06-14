@@ -34,8 +34,9 @@ export default class CreateUserDto {
     "user","author","moderator","admin"
   ])
   role: "user"|"author"|"moderator"|"admin";
+  @IsOptional()
   @IsDate()
-  lastLogin: Date;
+  lastLogin?: Date;
   @IsOptional()
   @IsUrl()
   urlWebsite?: string;

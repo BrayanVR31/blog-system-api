@@ -1,98 +1,160 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 📘 Blog System API – Free & Open Source
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Welcome to the **Blog System API**, a fully open-source and beginner-friendly RESTful API built with **NestJS**. 
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This project is ideal for:
+- 💻 **Junior developers** who want to learn how to consume or build modern APIs
+- 🧩 **Frontend devs** looking for a plug-and-play backend for blog platforms
+- 🤝 **Contributors** who want to collaborate or explore NestJS in action
+- 👀 **Recruiters & hiring teams** reviewing clean code and documentation as part of a technical portfolio
 
-## Description
+> ⚡ The project includes **modern, interactive documentation** built with **Astro** and **Starlight** – offering a smooth developer experience and clean design, similar in spirit to Swagger, but powered by static site generation.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+> 💼 Part of my personal portfolio, this project demonstrates backend architecture, TypeScript practices, and technical writing. You're welcome to **use**, **fork**, or **contribute**!
 
-## Project setup
+---
 
+## 🌟 Key Features
+
+- 🚀 **Modern API with NestJS & TypeScript**
+- 📚 **Interactive Documentation** using Astro + Starlight
+- 📝 **CRUD Operations** for blog posts, users, media, and more
+- 🎨 **Responsive Design** with dark mode and mobile-first layout
+- 🔐 **JWT Auth & Role Management**
+- 🧪 **Beginner-friendly and well-documented**
+- 🔧 **Fully customizable and easy to extend**
+
+---
+
+## 🧑‍💻 Quick Start
+
+> ⚙️ You can use the API or docs independently, or integrate them into your own frontend project.
+
+### Prerequisites
+- Node.js v18+
+- npm, yarn or pnpm
+
+### Installation
 ```bash
-$ npm install
+git clone https://github.com/BrayanVR31/blog-api-docs.git
+cd blog-api-docs
+npm install
+npm run dev
 ```
 
-## Compile and run the project
+> Visit `http://localhost:4321` to explore the interactive documentation.
 
-```bash
-# development
-$ npm run start
+---
 
-# watch mode
-$ npm run start:dev
+## 🔍 What's Inside?
 
-# production mode
-$ npm run start:prod
+- 🔐 **Authentication** – JWT, roles, API keys
+- 📝 **Posts & Tags** – Create, edit, categorize
+- 👤 **Users** – Registration, profiles, authors
+- 💬 **Comments** – CRUD, nesting, moderation
+- 🗂 **Media** – Uploads, optimization, library
+
+---
+
+## 🧑‍💻 Backend API with NestJS
+
+This project provides a fully functional RESTful API built with **[NestJS](https://nestjs.com/)**. It supports blog functionality including authentication, user management, posts, comments, and media uploads — and is structured to follow best practices for scalability and readability.
+
+> ⚙️ You can clone, run, and extend the backend in your own projects, or use it for learning purposes.
+
+### 📂 Project Structure
+
+```
+src/
+├── auth/            # Auth module (JWT, guards, login/register)
+├── blog/            # Blog post CRUD
+├── users/           # User profile and role management
+├── comments/        # Nested comment system
+├── media/           # File upload endpoints
+├── common/          # Reusable utils, interceptors, DTOs, filters
+├── app.module.ts    # Root module
+└── main.ts          # App entry point
 ```
 
-## Run tests
+### 🚀 Getting Started (Backend)
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+git clone https://github.com/BrayanVR31/blog-system-api.git
+cd blog-system-api
+npm install
 ```
 
-## Deployment
+Create a `.env` file:
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+```env
+PORT=3000
+JWT_SECRET=your_jwt_secret
+DATABASE_URL=mongodb://localhost:27017/blog-system
+```
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Start the server:
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npm run start:dev
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+API runs at `http://localhost:3000`
 
-## Resources
+### 📬 API Overview
 
-Check out a few resources that may come in handy when working with NestJS:
+#### 🔐 Authentication
+- `POST /auth/register` – Register new user
+- `POST /auth/login` – Log in and receive JWT
+- `GET /auth/profile` – Get current user (requires token)
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+#### 📝 Blog Posts
+- `GET /posts` – List all posts
+- `POST /posts` – Create a new post
+- `GET /posts/:id` – Get single post
+- `PUT /posts/:id` – Update post
+- `DELETE /posts/:id` – Delete post
 
-## Support
+#### 💬 Comments
+- `GET /posts/:id/comments` – Get comments for a post
+- `POST /comments` – Add a comment
+- `DELETE /comments/:id` – Remove a comment
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+#### 📦 Media
+- `POST /media/upload` – Upload an image or file
 
-## Stay in touch
+### 🧪 Testing
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+npm run test
+npm run test:e2e
+```
 
-## License
+### 📚 Swagger (Optional)
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+If you're using Swagger, visit:
+
+```txt
+http://localhost:3000/api
+```
+
+---
+
+## 🤝 Contributing
+
+```bash
+git checkout -b feature/your-feature
+git commit -m "feat: Add something useful"
+git push origin feature/your-feature
+```
+
+Then, open a pull request 🚀
+
+---
+
+## 🧩 Use It in Your Portfolio or Projects
+
+Feel free to use this API in your frontend apps, bootcamps, portfolios, or learning projects!
+
+---
+
+Made with ❤️ by [Brayan Vázquez Ramírez](https://github.com/BrayanVR31)

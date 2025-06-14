@@ -9,25 +9,27 @@ export class TagsController {
   constructor(private readonly tagService: TagService) { }
   @Get()
   getTags() {
-    return this.tagService.getList();
+    return this.tagService.findAll();
   }
 
   @Get("{:id}")
   getTagById(@Param() params: GetParamsTagDto) {
-    return "tag " + params.id;
+    return this.tagService.findOne(params.id);
   }
 
   @Post()
   createTag(@Body() createTagDto: CreateTagDto) {
-    return createTagDto;
+    return this.tagService.save(createTagDto);
   }
 
   @Patch("{:id}")
   updateTag(@Body() updateTagDto: UpdateTagDto, @Param() params: GetParamsTagDto) {
-    return updateTagDto;
+    return this.tagService.updateOne(params.id, updateTagDto);
   }
 
   @Delete("{:id}")
-  destroyTag(@Param() params: GetParamsTagDto) { }
+  destroyTag(@Param() params: GetParamsTagDto) {
+    this.tagService.deleteOne(params.id);
+  }
 }
 
