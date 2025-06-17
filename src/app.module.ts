@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { ConfigModule } from "@nestjs/config";
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 /**
@@ -23,12 +24,11 @@ import { Post } from './posts/post.entity';
 import { Comment } from './comments/comment.entity';
 import { Follower } from './followers/follower.enity';
 
-
 @Module({
-  imports: [TypeOrmModule.forRootAsync({
+  imports: [ConfigModule.forRoot(), TypeOrmModule.forRootAsync({
     useFactory: () => ({
       type: "postgres",
-      url: "",
+      url: process.env.DATABASE_URL,
       synchronize: true,
       entities: [Category, Tag, User, Post, Comment, Follower]
     })
